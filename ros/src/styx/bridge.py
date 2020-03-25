@@ -183,6 +183,7 @@ class Bridge(object):
             image = PIL_Image.open(BytesIO(base64.b64decode(imgString)))
             image_array = np.asarray(image)
             #image_array = np.zeros([10, 10, 3], dtype=np.uint8)
+
             image_message = self.bridge.cv2_to_imgmsg(image_array, encoding="rgb8")
             self.publishers['image'].publish(image_message)
             self.img_count = 0
@@ -209,3 +210,4 @@ class Bridge(object):
             z_values.append(z)
 
         self.server('drawline', data={'next_x': x_values, 'next_y': y_values, 'next_z': z_values})
+
