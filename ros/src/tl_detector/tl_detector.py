@@ -65,7 +65,6 @@ class TLDetector(object):
         self.waypoints = waypoints
 
     def traffic_cb(self, msg):
-        print("In traffic_cb")
         self.lights = msg.lights
 
     def image_cb(self, msg):
@@ -76,7 +75,6 @@ class TLDetector(object):
             msg (Image): image from car-mounted camera
 
         """
-        print("In image_cb")
         self.has_image = True
         self.camera_image = msg
         light_wp, state = self.process_traffic_lights()
