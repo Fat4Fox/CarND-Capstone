@@ -32,3 +32,5 @@ RUN mkdir /capstone
 VOLUME ["/capstone"]
 VOLUME ["/root/.ros/log/"]
 WORKDIR /capstone/ros
+
+RUN apt-get install -y vim && pip install --upgrade pip && pip install -U Pillow==6.2.2

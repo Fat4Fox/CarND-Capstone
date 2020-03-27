@@ -34,6 +34,7 @@ docker run -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capst
 
 Update Pillow in the image (otherwise camera won't work)
 ```bash
+pip install --upgrade pip
 pip install -U Pillow==6.2.2
 ```
 
