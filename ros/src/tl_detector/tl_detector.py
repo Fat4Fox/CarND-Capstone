@@ -76,11 +76,11 @@ class TLDetector(object):
             msg (Image): image from car-mounted camera
 
         """
-        self.image_counter = (self.image_counter + 1) % 10
-        # print("self.image_counter -> ", self.image_counter)
-        if self.image_counter != 1:
-            return
-        # print("In image_cb")
+        # self.image_counter = (self.image_counter + 1) % 10
+        # # print("self.image_counter -> ", self.image_counter)
+        # if self.image_counter != 1:
+        #     return
+        # # print("In image_cb")
 
         self.has_image = True
         self.camera_image = msg
