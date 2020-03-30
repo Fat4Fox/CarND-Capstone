@@ -29,7 +29,8 @@ docker build . -t capstone
 
 Run the docker file
 ```bash
-docker run -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capstone
+docker run --name cap -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capstone
+docker exec -it cap /bin/bash
 ```
 
 Update Pillow in the image (otherwise camera won't work)
@@ -41,6 +42,11 @@ pip install -U Pillow==6.2.2
 Install Vim
 ```bash
 sudo apt install --assume-yes vim
+```
+
+Setup Env
+```bash
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 ```
 
 ### Port Forwarding
