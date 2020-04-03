@@ -35,4 +35,5 @@ WORKDIR /capstone/ros
 
 RUN apt-get install -y vim && pip install --upgrade pip && pip install -U Pillow==6.2.2
 RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-
+RUN pip install mock matplotlib
+RUN apt-get install -y python-tk

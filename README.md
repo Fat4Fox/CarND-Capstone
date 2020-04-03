@@ -29,7 +29,7 @@ docker build . -t capstone
 
 Run the docker file
 ```bash
-docker run --name cap -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capstone
+docker run --name cap -p 4567:4567 -v $PWD:/capstone -v /Users/bhan/Mine/Udacity/SelfDrivingCar/mkoehnke/CarND-Capstone:/mkoehnke -v /Users/bhan/Mine/Udacity/SelfDrivingCar/TrafficLightDetection:/traffic -v /tmp/log:/root/.ros/ --rm -it capstone
 docker exec -it cap /bin/bash
 ```
 
