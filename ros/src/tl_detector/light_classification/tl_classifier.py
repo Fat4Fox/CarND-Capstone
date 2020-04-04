@@ -9,7 +9,7 @@ import yaml
 IMAGE_PATH = os.path.dirname(os.path.realpath(__file__)) + '/../../../../test_images/simulator/'
 MAX_IMAGE_WIDTH = 300
 MAX_IMAGE_HEIGHT = 300
-RECORD_IMAGES = True
+RECORD_IMAGES = False
 
 
 class TLClassifier(object):
@@ -62,7 +62,7 @@ class TLClassifier(object):
             if scores[i] > min_score_thresh:
                 light_class = self.classes[classes[i]]
                 self.save_image(image_np, light_class)
-                rospy.logdebug("Traffic Light Class detected: %d", light_class)
+                # rospy.logdebug("Traffic Light Class detected: %d", light_class)
                 return light_class, scores[i]
             else:
                 self.save_image(image_np, TrafficLight.UNKNOWN)
