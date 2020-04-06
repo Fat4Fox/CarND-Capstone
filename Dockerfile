@@ -35,5 +35,8 @@ WORKDIR /capstone/ros
 
 RUN apt-get install -y vim && pip install --upgrade pip && pip install -U Pillow==6.2.2
 RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-RUN pip install mock matplotlib
-RUN apt-get install -y python-tk
+RUN pip install mock
+
+## need below lines only for traffic detection training
+#RUN pip install matplotlib
+#RUN apt-get install -y python-tk
