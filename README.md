@@ -10,6 +10,29 @@ Please use **one** of the two installation options, either native **or** docker 
   * 2 GB system memory
   * 25 GB of free hard drive space
 
+#### For VirtualBox
+It needs to remove default pip otherwise pip install mock will fail.
+```apex
+sudo apt remove python-pip
+```
+
+GuestAdditions installation needs to set permission
+```apex
+sudo chmod 755 /media/student
+``` 
+
+To mount shared folder
+1. VM settings add Shared Folder from /Users/bhan/Mine/Udacity/SelfDrivingCar/Capstone/CarND-Capstone to 'share'
+2. Inside vm, run
+```apex
+sudo mount -t vboxsf -o uid=1000,gid=1000 share /capstone
+```
+
+To mount it permanently, add below line in /etc/rc.local before the `exit 0`:
+```apex
+mount -t vboxsf -o uid=1000,gid=1000 share /capstone
+```
+
   The Udacity provided virtual machine has ROS and Dataspeed DBW already installed, so you can skip the next two steps if you are using this.
 
 * Follow these instructions to install ROS
