@@ -10,4 +10,5 @@ venv/
 ros/log.txt
 traffic_light_bag_file/
 default.rviz
+test_images/
 
